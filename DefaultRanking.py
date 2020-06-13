@@ -2,12 +2,7 @@ import pymysql
 import re
 from operator import itemgetter
 
-db = pymysql.connect("localhost", "root", "password",
-                     "Job_Seekers", cursorclass=pymysql.cursors.DictCursor)
-cursor = db.cursor()
-cursor.execute(
-    "SELECT job_seeker_id,skills,experience,location FROM java_user_profile")
-Employee_records = cursor.fetchall()
+Employee_records = [{'job_seeker_id': 1, 'skills': ['Spring', 'JSP', 'JSF'], 'experience': '5 years', 'location': 'stockholm', 'rank': 0}, {'job_seeker_id': 2, 'skills': ['Servlets', 'JSP'], 'experience': '2 years', 'location': 'gothenburg', 'rank': 0}, {'job_seeker_id': 3, 'skills': ['JSP'], 'experience': '4 years', 'location': 'lund', 'rank': 0}, {'job_seeker_id': 4, 'skills': ['Servlets'], 'experience': '3 years', 'location': 'malmo', 'rank': 0}, {'job_seeker_id': 5, 'skills': ['Hibernate', 'Servlets'], 'experience': '1 years', 'location': 'stockholm', 'rank': 0}]
 
 
 skills = ["Servlets"]
